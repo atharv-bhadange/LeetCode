@@ -16,27 +16,29 @@ public:
 };
 */
 
-class Solution {
+class Solution
+{
 public:
-    Node* connect(Node* root) {
-        if(root==nullptr)
+    Node *connect(Node *root)
+    {
+        if (root == nullptr)
             return root;
-        queue<Node*> q;
+        queue<Node *> q;
         q.push(root);
         q.push(nullptr);
-        while(q.size()>1)
+        while (q.size() > 1)
         {
             auto n = q.front();
             q.pop();
-            if(n==nullptr)
+            if (n == nullptr)
             {
                 q.push(n);
                 continue;
             }
             n->next = q.front();
-            if(n->left)
+            if (n->left)
                 q.push(n->left);
-            if(n->right)
+            if (n->right)
                 q.push(n->right);
         }
         return root;

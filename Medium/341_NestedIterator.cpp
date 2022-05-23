@@ -16,30 +16,34 @@
  * };
  */
 
-class NestedIterator {
+class NestedIterator
+{
 public:
     vector<int> it;
-    int i=0;
-    NestedIterator(vector<NestedInteger> &nestedList) {
+    int i = 0;
+    NestedIterator(vector<NestedInteger> &nestedList)
+    {
         solve(nestedList);
     }
-    
+
     void solve(vector<NestedInteger> &lt)
     {
-        for(auto x : lt)
+        for (auto x : lt)
         {
-            if(x.isInteger())
+            if (x.isInteger())
                 it.push_back(x.getInteger());
             else
                 solve(x.getList());
         }
     }
-    
-    int next() {
+
+    int next()
+    {
         return it[i++];
     }
-    
-    bool hasNext() {
+
+    bool hasNext()
+    {
         return i < it.size();
     }
 };
