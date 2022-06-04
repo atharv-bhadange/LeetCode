@@ -32,3 +32,5 @@ public:
         return cnt;
     }
 };
+
+// division is repetitve subtraction
