@@ -10,12 +10,9 @@ public:
         r[0] = nums[0];
 
         for (int i = 1; i < n; i++)
-
         {
-
             r[i] = r[i - 1] + nums[i];
         }
-
         // r.pop_front();
 
         return r;
