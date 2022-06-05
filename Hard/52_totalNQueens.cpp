@@ -1,6 +1,6 @@
 class Solution
 {
-public:
+public: 
     int ans1 = 0;
     bool isSafe(int row, int col, vector<string> &board, int n)
     {
