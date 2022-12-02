@@ -1,28 +1,15 @@
 class Solution {
 public:
     bool closeStrings(string word1, string word2) {
-        if(word1.size() != word2.size())
-            return 0;
-        unordered_map<char,int> mp;
-        for(auto& x : word1)
-            mp[x]++;
-        unordered_map<int,int> mint;
-        for(auto& x : mp)
-            mint[x.second]++;
-        unordered_map<char,int> mp2;
-        for(auto& x : word2) {
-            mp2[x]++;
-            if(mp[x]==0)
-                return 0;
-        }
-        // unordered_map<int,int> mint2;
-        for(auto& x : mp2){
-            mint[x.second]--;
-        }
-        for(auto& x : mint)
-            if(x.second != 0)
-                return 0;
+        vector<int>w1(26,0),w2(26,0),w3(26,0),w4(26,0);
+        for(char c:word1)
+            w1[c-'a']++,w3[c-'a'] = 1;
+    
+        for(char c:word2)
+            w2[c-'a']++,w4[c-'a'] = 1;
         
-        return 1;
+        sort(begin(w1),end(w1));
+        sort(begin(w2),end(w2));
+        return w1==w2&&w3==w4;
     }
 };
