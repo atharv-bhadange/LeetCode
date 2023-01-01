@@ -26,7 +26,6 @@ public:
                 done[pattern[i]-'a'] = 1;
             }
             else {
-                cout<<i<<vs[i]<<m[vs[i]]<<endl;
                 
                 if(m[vs[i]] != pattern[i])
                     return false;
