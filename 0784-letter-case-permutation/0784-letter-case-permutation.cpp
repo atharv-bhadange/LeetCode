@@ -37,7 +37,7 @@ public:
     }
     vector<string> letterCasePermutation(string s) {
         solve(s,"");
-        vector<string> a1(ans.begin(),ans.end());
-        return a1;
+
+        return ans;
     }
 };
