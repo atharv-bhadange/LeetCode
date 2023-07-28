@@ -10,7 +10,6 @@ public:
         int i=0;
         int ans = 0;
         for(;i<arr.size(); i++) {
-            cout<<arr[i]<<endl;
             if(mp.find(arr[i]) != mp.end()) {
                 int k = 0;
                 int j = mp[arr[i]];
@@ -24,9 +23,7 @@ public:
                     ans++;
                 }
             }
-            cout<<i<<" "<<ans<<endl;
         }
-        // cout<<ans<<endl;
         return ans==pieces.size();
     }
 };
