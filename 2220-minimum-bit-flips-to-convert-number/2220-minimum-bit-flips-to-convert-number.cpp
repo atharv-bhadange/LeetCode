@@ -1,13 +1,13 @@
 class Solution {
 public:
     int minBitFlips(int start, int goal) {
-        int x = start^goal;
-        int ans = 0;
-        while(x) {
-            x = x & (x-1);
-            ans++;
+        int ans=0;
+        string s= bitset<32> (start).to_string();
+        string str= bitset<32> (goal).to_string();
+        cout<<s<<" "<<str<<endl;
+        for(int i=0;i<32;i++){
+            if(s[i]!=str[i]) ans++;
         }
-        
         return ans;
     }
 };
