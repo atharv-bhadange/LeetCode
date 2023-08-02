@@ -2,7 +2,6 @@ class Solution {
 public:
     vector<vector<int>> ans;
     void solve(int idx, int n, vector<int>& temp) {
-        cout<<idx<<" ";
         if(idx == n) {
             ans.push_back(temp);
             return;
