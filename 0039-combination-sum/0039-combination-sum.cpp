@@ -2,6 +2,8 @@ class Solution {
 public:
     
     void solve(set<vector<int>>& ans, vector<int> ip, vector<int> op, int sum, int target) {
+        if(sum>target)
+            return;
         if(ip.size() == 0) {
             if(sum == target) {
                 ans.insert(op);
