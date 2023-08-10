@@ -2,11 +2,10 @@ class Solution {
 public:
     
     bool binary(vector<int>& nums, int l, int r, int target) {
-        // if(l>=r)
-        //     return -1;
-        
+     
         while(l<=r) {
             
+            // skip the duplicates 
             while(l<r && nums[l] == nums[l+1])
                 l++;
             while(l<r && nums[r] == nums[r-1])
