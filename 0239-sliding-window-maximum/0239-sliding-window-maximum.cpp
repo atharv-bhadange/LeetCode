@@ -1,24 +1,22 @@
 class Solution {
 public:
-    vector<int> maxSlidingWindow(vector<int>& a, int k) {
-
-        int i = 0, j = 0;
-        list<int> q;
-        int n = a.size();
+    vector<int> maxSlidingWindow(vector<int>& nums, int k) {
+        list<int> lt;
+        int i=0, j=0;
+        int n = nums.size();
         vector<int> ans;
+        int mx = INT_MIN;
         while(j<n) {
-            while(!q.empty() && q.back() < a[j]) {
-                    q.pop_back();
-            }
-            q.push_back(a[j]);
-            if(j-i+1 != k) {
+            while(!lt.empty() && lt.back() < nums[j])
+                lt.pop_back();
+            lt.push_back(nums[j]);
+            if(j-i+1 < k) {
                 j++;
             }
-            else if(j-i+1 == k) {
-                ans.push_back(q.front());
-
-                if(a[i] == q.front()) {
-                    q.pop_front();
+            else {
+                ans.push_back(lt.front());
+                if(nums[i] == lt.front()) {
+                    lt.pop_front();
                 }
                 i++;
                 j++;
