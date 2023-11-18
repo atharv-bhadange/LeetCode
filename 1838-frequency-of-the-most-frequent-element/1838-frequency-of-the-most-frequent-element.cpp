@@ -10,10 +10,8 @@ public:
         while(j<n) {
             sum += nums[j];
             
-            // long long ideal_sum = ;
-            if(1LL*(j-i+1)*nums[j] - sum > k)
-                while(1LL*(j-i+1)*nums[j] - sum > k)
-                    sum -= nums[i++];
+            while(1LL*(j-i+1)*nums[j] - sum > k)
+                sum -= nums[i++];
             
             ans = max(ans, j-i+1);
             j++;
