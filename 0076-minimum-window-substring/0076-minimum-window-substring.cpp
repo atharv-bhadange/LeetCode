@@ -23,9 +23,7 @@ public:
                     cnt--;
                 }
             }
-            // if(cnt > 0) {
-            //     j++;
-            // }
+            
             if(cnt == 0) {
                 while(cnt == 0) {
                     if(mp.find(s[i]) != mp.end()) {
